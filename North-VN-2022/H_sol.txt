@@ -1,0 +1,13 @@
+# Bài H:
+
+A[i] là mảng lưu các số được `IN` vào được sắp xếp tăng dần
+Sử dụng cấu trúc dữ liệu map (Với pos[A[i]] = i -> Lưu vị trí của giá trị A[i])
+Sử dụng cây chỉ số nhị phân Bit
+F[i] là mảng:
+
+- F[i] > 0 khi số lớn thứ i (x) được thêm vào sau khi sắp xếp tăng dần (i = pos[x]])
+- F[i] = 0 Khi số lớn thứ i (x) chưa được thêm vào hay đã bị xóa
+
+Với truy vấn `IN x` thì `F[pos[x]]++`
+Với truy vấn `OUT x` thì `F[pos[x]]--`
+Tìm MEDIAN: Dùng tìm kiếm nhị phân để tìm vị trí trung vị khi vị trí trung vị = tổng từ F[0]->F[k] (k bé nhất thỏa) => A[k] là số trung vị
