@@ -1,6 +1,143 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+#define inf 0x3f3f3f3f
+#pragma GCC target ("avx2")
+#pragma GCC optimization ("O3")
+#pragma GCC optimization ("unroll-loops")
+#define fi first
+#define se second
+#define N 50003
+typedef long long ll;
+typedef pair<int, int> ii;
+
+template<class X, class Y>
+	inline bool maximize(X &x, const Y &y) {return (x < y ? x = y, 1 : 0);}
+template<class X, class Y>
+	inline bool minimize(X &x, const Y &y) {return (x > y ? x = y, 1 : 0);}
+
+mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
+int Random(int l, int r) {
+    return uniform_int_distribution<int>(l, r)(rng);
+}
+
+int readInt() {
+	bool minus = false;
+	int result = 0;
+	char ch;
+	ch = getchar();
+	while(true) {
+		if(ch == '-') break;
+		if(ch >= '0' && ch <= '9') break;
+		ch = getchar();
+	}
+
+	if(ch == '-') minus = true; else result = ch - '0';
+	while(true) {
+		ch = getchar();
+		if (ch < '0' || ch > '9') break;
+		result = result * 10 + (ch - '0');
+	}
+
+	if(minus)
+		return -result;
+	else
+		return result;
+}
+
+int val[11][N], P[N][16], Pa[N][16], maxv[N], minv[N], Pi[N][16], row, col, maxDiff;
+
+int getMax(int l, int r) {
+    int log = log2(r - l + 1);
+    return max(maxv[P[l][log]], maxv[P[r - (1 << log) + 1][log]]);
+}
+
+int getMin(int l, int r) {
+    int log = log2(r - l + 1);
+    return min(Pi[l][log], Pi[r - (1 << log) + 1][log]);
+}
+
+int getMaxIn(int l, int r) {
+    int log = log2(r - l + 1);
+    return max(Pa[l][log], Pa[r - (1 << log) + 1][log]);
+}
+
+void process() {
+    cin >> row >> col >> maxDiff;
+    for (int i = 1; i <= row; ++i) {
+        for (int j = 1; j <= col; ++j) {
+            cin >> val[i][j];
+        }
+    }
+
+    int ans(0);
+    for (int i = 1; i <= row; ++i) {
+        for (int k = 1; k <= col; ++k)
+            maxv[k] = 0, minv[k] = 1e9+7;
+
+        for (int j = i; j <= row; ++j) {
+            for (int k = 1; k <= col; ++k) {
+                maxv[k] = max(maxv[k], val[j][k]);
+                minv[k] = min(minv[k], val[j][k]);
+                P[k][0] = k;
+                Pi[k][0] = minv[k];
+
+                Pa[k][0] = max(val[i][k], val[j][k]);
+            }
+
+            for (int l = 1; (1 << l) <= col; ++l) {
+                for (int k = 1; k + (1 << l) - 1 <= col; ++k) {
+                    Pi[k][l] = min(Pi[k][l - 1], Pi[k + (1 << (l - 1))][l - 1]);
+                    Pa[k][l] = max(Pa[k][l - 1], Pa[k + (1 << (l - 1))][l - 1]);
+
+                    if(maxv[P[k][l - 1]] > maxv[P[k + (1 << (l - 1))][l - 1]]) {
+                        P[k][l] = P[k][l - 1];
+                    } else {
+                        P[k][l] = P[k + (1 << (l - 1))][l - 1];
+                    }
+                }
+            }
+
+            for (int k = 1; k <= col; ++k) {
+                int l(k), r(col), opt(0);
+                while(l <= r) {
+                    int mid = (l + r) >> 1;
+                    if(getMax(k, mid) - getMin(k, mid) <= maxDiff) {
+                        opt = mid;
+                        l = mid + 1;
+                    } else {
+                        r = mid - 1;
+                    }
+                }
+
+                if(!opt)
+                    continue;
+
+                if(getMaxIn(k, opt) == getMax(k, opt) || maxv[k] == getMax(k, opt)) {
+                    ans = max(ans, (j - i + 1) * (opt - k + 1));
+                } else {
+                    int log = log2(opt - k + 1);
+                    opt = (maxv[P[k][log]] > maxv[P[opt - (1 << log) + 1][log]]) ? P[k][log] : P[opt - (1 << log) + 1][log];
+                    ans = max(ans, (j - i + 1) * (opt - k + 1));
+                }
+            }
+        }
+    }
+
+    cout << ans;
+}
+
+int main() {
+    ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+
+
+    process();
+    return 0;
+}
+
+/*
 #include <bits/stdc++.h>
 #define endl '\n'
-// #define int long long
 using namespace std;
 template<class T> T Abs(const T &x) { return (x < 0 ? -x : x); }
 template<class X, class Y>
@@ -256,5 +393,4 @@ signed main(void) {
 
   return 0;
 }
-
-//
+*/
