@@ -13,17 +13,16 @@ bool minimize(X &x, const Y &y) {
 }
 
 const int N = 16;
-const int R[] = { 255,192,128,0,255,128,255,128,  0,  0,  0,  0,  0,  0,255,128 };
-const int G[] = { 255,192,128,0,  0,  0,255,128,255,128,255,128,  0,  0,  0,  0 };
-const int B[] = { 255,192,128,0,  0,  0,  0,  0,  0,  0,255,128,255,128,255,128 };
-const string Color[] = {"White", "Silver", "Gray", "Black", "Red", "Maroon", "Yellow", "Olive", "Lime", "Green", "Aqua", "Teal", "Blue", "Navy", "Fuchsia", "Purple"};
+const string Color[] = { "White", "Silver", "Gray", "Black", "Red", "Maroon", "Yellow", "Olive", "Lime", "Green", "Aqua", "Teal", "Blue", "Navy", "Fuchsia", "Purple" };
+const int    R[]     = {  255,     192,      128,    0,       255,   128,      255,      128,       0,      0,       0,      0,      0,      0,    255,       128 };
+const int    G[]     = {  255,     192,      128,    0,         0,     0,      255,      128,     255,    128,     255,    128,      0,      0,      0,         0 };
+const int    B[]     = {  255,     192,      128,    0,         0,     0,        0,        0,       0,      0,     255,    128,    255,    128,    255,       128 };
 
 double sqr(int x) {
   return (double) x * x;
 }
 double dist(int r1, int g1, int b1, int r2, int g2, int b2) {
-  double res = sqrt(sqr(r1-r2)+sqr(g1-g2)+sqr(b1-b2));
-  return res;
+  return sqrt(sqr(r1 - r2) + sqr(g1 - g2) + sqr(b1 - b2));
 }
 
 signed main(void) {
