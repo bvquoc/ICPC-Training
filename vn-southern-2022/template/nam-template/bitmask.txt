@@ -1,0 +1,9 @@
+For (mask, 1, (1 << n) - 1) {
+        for (int bit = mask; bit > 0; bit ^= bit & (-bit)) {
+            int i = __builtin_ctz(bit & (-bit));
+            for (int u = (((1 << n) - 1) ^ mask); u > 0; u ^= u & (-u)) {
+                int v = __builtin_ctz(u & (-u));
+                // process
+            }
+        }
+    }

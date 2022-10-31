@@ -1,0 +1,50 @@
+struct BIT2dTree {
+    int T[2400][2400], m, n;
+    
+    void clear(int _m, int _n) {
+        m = _m, n = _n;
+        for (int i = 1; i <= m; ++i) {
+            for (int j = 1; j <= n; ++j) {
+                T[i][j] = 0;
+            }
+        }
+    }
+
+    void update(int p, int q, int v) {
+        for (int i = p; i <= m; i += i & -i) {
+            for (int j = q; j <= n; j += j & -j) {
+                T[i][j] += v;
+            }
+        }
+    }
+
+    int get(int p, int q) {
+        int res(0);
+        for (int i = p; i > 0; i -= i & -i) {
+            for (int j = q; j > 0; j -= j & -j) {
+                res += T[i][j];
+            }
+        }
+        return res;
+    }
+} Tree;
+
+void process() {
+    int q;
+    cin >> q;
+    while(q--) {
+        int type, p, q, pp, qq;
+        cin >> type >> p >> q;
+        if(!type) {
+            Tree.clear(p, q);
+        } else
+            if(type == 1) {
+                cin >> pp;
+                Tree.update(p, q, pp);
+            } else
+                if(type == 2) {
+                    cin >> pp >> qq;
+                    cout << Tree.get(pp, qq) - Tree.get(pp, q - 1) - Tree.get(p - 1, qq) + Tree.get(p - 1, q - 1) << '\n';
+                }
+    }
+}

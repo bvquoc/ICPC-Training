@@ -1,0 +1,21 @@
+void dfs(int u) {
+    Low[u] = Num[u] = ++cnt;
+    st.push(u);
+    for (int v  a[u])
+        if (Num[v])
+            minimize(Low[u], Num[v]);
+        else {
+            dfs(v);
+            minimize(Low[u], Low[v]);
+        }
+    if (Num[u] == Low[u]) {   found one
+        Count++;
+        int v;
+        do {
+            v = st.top();
+            st.pop();
+            Num[v] = Low[v] = INF;   remove v from graph
+        } while (v != u);
+    }
+    return;
+}

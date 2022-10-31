@@ -1,0 +1,19 @@
+struct Fenwick {
+    int n;
+    vector <int> v;
+    Fenwick (int _n = 0) {
+        n = _n;
+        v.resize(n + 9, 0);
+    }
+    void update(int x, int d) {
+        for (; x >= 1; x -= x & -x) 
+            v[x] += d;
+        return;
+    }
+    int get(int x) {
+        int ans = 0;
+        for (; x <= n; x += x & -x) 
+            ans += v[x];
+        return ans;
+    }
+};

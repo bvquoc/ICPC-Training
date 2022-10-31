@@ -1,0 +1,23 @@
+int prim(int start) {
+    int Answer = 0;
+    priority_queue<ii> qu;
+    for (int i = 1; i <= n; i++)
+        d[i] = INF;
+    d[start] = 0;
+    qu.push({0, start});
+    while (qu.size()) {
+        ii top = qu.top();
+        qu.pop();
+        int u = top.se;
+        if (d[u] != -top.fi)
+            continue;
+        Answer += d[u];
+        d[u] = 0;
+        for (int i = 0; i < ke[u].size(); i++) {
+            int v = ke[u][i].se;
+            if (minimize(d[v], a[u][i].fi))
+                qu.push({-d[v], v});
+        }
+    }
+    return Answer;
+}

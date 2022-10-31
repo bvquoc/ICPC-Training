@@ -1,0 +1,46 @@
+int m, n, q;
+int a[505][505], P[502][502][10][10];
+
+void RMQ2D() {
+    for (int i = m; i >= 1; --i) {
+        for (int j = n; j >= 1; --j) {
+            P[i][j][0][0] = a[i][j];
+            for (int q = 1; i + (1 << q) - 1 <= m; ++q)
+                P[i][j][q][0] = max(P[i][j][q - 1][0], P[i + (1 << (q - 1))][j][q - 1][0]);
+
+            for (int k = 1; j + (1 << k) - 1 <= n; ++k)
+                P[i][j][0][k] = max(P[i][j][0][k - 1], P[i][j + (1 << (k - 1))][0][k - 1]);
+
+            for (int q = 1; i + (1 << q) - 1 <= m; ++q) {
+                for (int k = 1; j + (1 << k) - 1 <= n; ++k) {
+                    P[i][j][q][k] = max({P[i][j][q - 1][k - 1], P[i][j + (1 << (k - 1))][q - 1][k - 1],
+                        P[i + (1 << (q - 1))][j][q - 1][k - 1], P[i + (1 << (q - 1))][j + (1 << (k - 1))][q - 1][k - 1]});
+                }
+            }
+        }
+    }
+}
+
+int getMax(int x1, int y1, int x2, int y2) {
+    int k = log2(y2 - y1 + 1), q = log2(x2 - x1 + 1);
+    return max({P[x1][y1][q][k], P[x2 - (1 << q) + 1][y2 - (1 << k) + 1][q][k],
+        P[x1][y2 - (1 << k) + 1][q][k], P[x2 - (1 << q) + 1][y1][q][k]});
+}
+
+void process() {
+    cin >> m >> n >> q;
+    for (int i = 1; i <= m; ++i) {
+        for (int j = 1; j <= n; ++j) {
+            cin >> a[i][j];
+        }
+    }
+
+    RMQ2D();
+
+    while(q--) {
+        int x1, y1, x2, y2;
+        cin >> x1 >> y1 >> x2 >> y2;
+
+        cout << getMax(x1, y1, x2, y2) << '\n';
+    }
+}

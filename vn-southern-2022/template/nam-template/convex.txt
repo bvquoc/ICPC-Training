@@ -1,0 +1,52 @@
+struct Q {
+    int x, y;
+};
+Q a[maxN];
+Q up[maxN], down[maxN];
+bool cmp(const Q &x, const Q &y) {
+    return (x.x < y.x || (x.x == y.x && x.y < y.y));
+}
+bool cw(Q a, Q b, Q c) {
+    return (1LL * a.x * (b.y - c.y) + 1LL * b.x * (c.y - a.y) + 1LL * c.x * (a.y - b.y) < 0);
+}
+bool ccw(Q a, Q b, Q c) {
+    return (1LL * a.x * (b.y - c.y) + 1LL * b.x * (c.y - a.y) + 1LL * c.x * (a.y - b.y) > 0);
+}
+void convexhull () {
+    if (n == 1)
+        return;
+    sort(a + 1, a + 1 + n, cmp);
+    Q p1 = a[1], p2 = a[n];
+    int Up = 0, Down = 0;
+    up[++Up] = p1;
+    down[++Down] = p1;
+    For (i, 1, n) {
+        if (i == n || cw(p1, a[i], p2)) {
+            while (Up >= 2 && !cw(up[Up - 1], up[Up], a[i]))
+                --Up;
+            up[++Up] = a[i];
+        }
+        if (i == n || ccw(p1, a[i], p2)) {
+            while (Down >= 2 && !ccw(down[Down - 1], down[Down], a[i]))
+                --Down;
+            down[++Down] = a[i];
+        }
+    }
+    n = 0;
+    For (i, 1, Up)
+        a[++n] = up[i];
+    for (int i = Down - 1; i >= 2; i--)
+        a[++n] = down[i];
+    return;
+}
+    For (i, 1, n)
+        cin >> a[i].x >> a[i].y;
+    convexhull();
+    Size += (a[1].x - a[n].x) * (a[1].y + a[n].y);
+    Dow (i, n, 2)
+        Size += (a[i].x - a[i - 1].x) * (a[i].y + a[i - 1].y);
+    cout << Size / 2;
+    if (Size % 2)
+        cout << ".5" << endl;
+    else
+        cout << ".0" << endl;

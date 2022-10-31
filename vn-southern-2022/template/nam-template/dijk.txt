@@ -1,0 +1,24 @@
+void dijkstra(int s) {
+    priority_queue<ii, vector<ii>, greater<ii>> pq;
+    for (int i = 1; i <= n; i++)
+        d[i] = INF;
+    d[s] = 0;
+    pq.push(ii(0, s));
+
+    while (pq.size()) {
+        int u = pq.top().second;
+        int du = pq.top().first;
+        pq.pop();
+        if (du != d[u])
+            continue;
+
+        for (int i = 0; i < ke[u].size(); i++) {
+            int v = ke[u][i].second;
+            int uv = ke[u][i].first;
+            if (d[v] > du + uv) {
+                d[v] = du + uv;
+                pq.push({d[v], v});
+            }
+        }
+    }
+}

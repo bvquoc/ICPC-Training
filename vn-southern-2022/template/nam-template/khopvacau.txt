@@ -1,0 +1,25 @@
+void dfs(int u, int p) {
+    int NumChild = 0;
+    Low[u] = Num[u] = ++Time;
+    for (int v : a[u]) {
+        if (v != p) {
+            if (Num[v] != 0)
+                minimize(Low[u], Num[v]);
+            else {
+                dfs(v, u);
+                NumChild++;
+                minimize(Low[u], Low[v]);
+                if (Low[v] >= Num[v])
+                    CriticalEdge++;
+                if (u == p) {
+                    if (NumChild >= 2)
+                        CriticalNode[u] = true;
+                } else {
+                    if (Low[v] >= Num[u])
+                        CriticalNode[u] = true;
+                }
+            }
+        }
+    }
+    return;
+}

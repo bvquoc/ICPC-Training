@@ -1,0 +1,17 @@
+bool bellmanFord(int s) {
+    for (int T = 0; T < n; ++T) {
+        for (int i = 1; i <= n; ++i) {
+            for (auto &j : ke[i]) {
+                int v = j.fi, w = j.se;
+                if(dist[v] > dist[u] + w) {
+                    dist[v] = dist[u] + w;
+                    if(T == n - 1) {
+                        // ton tai chu trinh am
+                        return false;
+                    }
+                }
+            }
+        }
+    }
+    return true;
+}
