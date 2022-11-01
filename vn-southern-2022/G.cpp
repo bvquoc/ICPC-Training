@@ -44,12 +44,9 @@ struct DSU {
 } dsu;
 
 const int N = 10004;
-int n, m;
-int a[N];
+int n, a[N];
 int f[N][N];
 
-vector <int> t[N];
-int idx[N];
 signed main(void) {
   ios::sync_with_stdio(0); cin.tie(nullptr);
   #ifdef ziwok
@@ -57,10 +54,11 @@ signed main(void) {
   freopen("output.txt","w",stdout);
   #endif
 
+  int m;
   cin >> n >> m;
   dsu.assign(n);
   for (int i = 1; i <= n; i++) cin >> a[i];
-  for (int i = 0; i < m; i++) {
+  while (m--) {
     int u, v;
     cin >> u >> v;
     dsu.join(a[u],a[v]);
