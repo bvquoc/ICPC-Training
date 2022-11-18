@@ -2,9 +2,6 @@
 #define endl '\n'
 using namespace std;
 
-const int N = 100005;
-int n, q, a[N];
-
 signed main(void) {
     ios::sync_with_stdio(0); cin.tie(nullptr);
     #ifdef ziwok
