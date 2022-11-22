@@ -25,11 +25,9 @@ signed main(void) {
         return 0;
     }
 
-    auto idx = [&](char x) -> size_t {
-        return x - 'a';
-    };
     keyboard += keyboard[0];
     bool f[26][26];
+    auto idx = [&](char x) -> size_t { return x - 'a'; };
     for (int i = 0; i + 1 < keyboard.size(); i++) 
         f[idx(keyboard[i])][idx(keyboard[i+1])] = true;
 
