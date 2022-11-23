@@ -15,19 +15,6 @@ bool isValid(int x, int y) {
     return true;
 }
 
-int cnt(int x, int y) {
-    if (!isValid(x,y)) return 0;
-    int cntA = 0, cntM = 0;
-    for (int i = 0; i < 4; i++) {
-        int u = x + dx[i];
-        int v = y + dy[i];
-        if (!isValid(u, v)) continue;
-        if (a[u][v] == 'A') cntA++;
-        if (a[u][v] == 'M') cntM++;
-    }
-    return cntA * cntM;
-}
-
 signed main(void) {
     ios::sync_with_stdio(0); cin.tie(nullptr);
     #ifdef ziwok
@@ -40,6 +27,18 @@ signed main(void) {
         cin >> a[i];
 
     int res = 0;
+
+    auto cnt = [](int x, int y) -> int {
+        int cntA = 0, cntM = 0;
+        for (int i = 0; i < 4; i++) {
+            int u = x + dx[i], v = y + dy[i];
+            if (!isValid(u, v) || a[u][v] == 'C') continue;
+            if (a[u][v] == 'A') cntA++;
+            else cntM++;
+        }
+        return cntA * cntM;
+    };
+
     for (int i = 0; i < n; i++)
         for (int j = 0; j < m; j++) 
             if (a[i][j] == 'C') res += cnt(i, j);
