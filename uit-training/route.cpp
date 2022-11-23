@@ -1,17 +1,20 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
+#define endl '\n'
 using namespace std;
 
-int main() {
-    ios_base :: sync_with_stdio(0); cin.tie(0); cout.tie(0);
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
+signed main(void) {
+    ios::sync_with_stdio(0); cin.tie(nullptr);
+    #ifdef ziwok
+    freopen("input.txt","r",stdin);
+    freopen("output.txt","w",stdout);
+    #endif
 
     // input    
     int n, m, k;
     long long mod;
 
     cin >> n >> m >> k >> mod;
-    n --, m --;
+    n--, m--;
     vector<pair<int, int>> p(k);
 
     // prepare
@@ -32,11 +35,6 @@ int main() {
 
     ifact[n + m] = Pow(fact[n + m], mod - 2);
 
-    // debug
-    // int _tmp = ifact[n + m];
-    // cout << _tmp * Pow(_tmp, mod - 2) % mod << endl;
-    // cout << ifact[n + m] << ' ' << n + m << ' ' << 1LL * fact[n + m] * ifact[n + m] % mod << endl; 
-    
     for (int i = n + m; i >= 1; i --) ifact[i - 1] = ifact[i] * i % mod;
 
     auto comp = [=](int _k, int _n) {
@@ -44,11 +42,6 @@ int main() {
         return fact[_n] * ifact[_k] % mod * ifact[_n - _k] % mod;
         // nCk = n! / k! / (n - k)!
     };
-
-    // debug
-    // cout << fact[2] << ' ' << ifact[3] << ' ' << ifact[1] << endl;
-    // cout << comp(2, 3) << endl;
-    // return 0;
 
     // input
     for (auto &x : p) {
