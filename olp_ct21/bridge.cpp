@@ -1,3 +1,4 @@
+// https://oj.vnoi.info/problem/olp_ct21_bridge
 #include <bits/stdc++.h>
 #define endl '\n'
 using namespace std;
