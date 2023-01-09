@@ -7,126 +7,80 @@
 
 ## 🙋🏻‍♂️Brief introduction
 
-> Hi, I'm a student, a front-end developer who can code all day without getting tired.
+> Hi, I'm a student who can code and learn about technology all day without getting tired.
 
-I started learning to code one year ago, and it only took six months for me to make money from my programming skills. I also have articles about technology that get more than 10,000 views.
+I started learning to code three years ago. Mainly about C++ and competition programming (data structures & algorithms). That helped me win some achievements and get a position as a programming instructor at an academy.
 
-In the past year, I have been very focused on learning front-end web programming. Now I am very confident that my abilities can meet your requirements.
+In the past year, I have been very focused on learning web programming. And I'm trying to be a good software engineer.
 
-## 👔Projects
+## 🥇Achievements
 
-### Shopee clone
+- Second Prize - **The 31st Vietnam Student Olympiad in Informatics (OLP'22)**
+- Ranked 80 in the World - **IEEEXtreme 16.0**
+- Honorable Prize - **Vietnamese Olympiad in Informatics 2020**
+- Second Prize - **Daknong Province Olympiad in Informatics 2018-2019, 2019-2020**
+- Gold Medal - **Daknong Province Olympiad 2018**
+- First Prize - **Daknong Young Informatics Contest XIII**
+- First Prize - **Vinfast F1 Race - STEME DAY 2020**
+- TOP10 - **Vietnam Online Hackathon 2020**
 
-This is a project to clone the user page of the e-commerce platform [Shopee](https://shopee.com).
+## 💻Work experience
 
-**Technologies used**: REST API, ReactJs, Typescript, Tailwindcss, React Router, React Hook Form, Yup, React Query, Vite, Vitest, Storybook, ESLint, Prettier, React Helmet
+### Fullhouse | Programming Instructor (Part-time)
 
-**Functions include**:
+**Time:** 03/2022 - now
 
-- Manage authentication with JWT (automatic token refresh applied)
-- Use the Yup and React Hook Form to validate the form.
-- Smart Pagination, Filter, and Product Search
-- Incorporate state into the URL to easily share results across devices.
-- Asynchronous state management with React Query
-- Code Splitting
-- Improve performance by optimizing build file size analysis.
-- SEO with React Helmet
-- Separate the private and public routes.
-- Unit Test
-- Manage components with Storybook
+**Description:**
 
-**🔗Webiste**: [https://vercel.com](https://vercel.com)
+- Teaching C++ and data structures & algorithms
+- Website administrator laptrinh24h.vn
 
-**🔐Account for testing**: `user3@gmail.com` / `hackerlord`
+### thuocsi.vn | Software Engineer Intern
 
-**🔗Github**: [https://github.com](https://github.com)
+**Time:** 11/2021 - 02/2022
 
-### Portfolio
+**Description:** Use Golang programming language to write functions, APIs, middlewares. Occasionally I am tasked with debugging and maintaining codes.
 
-This is my personal website to introduce myself, which I designed and coded myself. I also use this to post my blogs.
+### luyencode.net | Developer & Administrator
 
-**Technologies used**: ReactJs, Create React App, Styled Component, ESLint, Prettier, React Helmet, React Router
-
-**Functions include**:
-
-- Fully responsive website
-- Scoped CSS with Styled Component
-- Linting with Prettier and ESLint
-- Improve SEO with React helmet
-- React Context is used to manage state.
-- Code Splitting
-
-**🔗Webiste**: [https://vercel.com](https://vercel.com)
-
-**🔗Github**: [https://github.com](https://github.com)
-
-### Booking Hotel Template
-
-A fully responsive website that I coded from a design file on the internet. This mini-website has 4 pages.
-
-**Technologies used**: HTML5, SASS, Bootstrap 5, Javascript
-
-**Functions include**:
-
-- Fully responsive website
-- Semantic HTML
-- Mega menu dropdown
-
-**🔗Webiste**: [https://vercel.com](https://vercel.com)
-
-**🔗Github**: [https://github.com](https://github.com)
-
-### Online Shop Template
-
-This was one of the first projects I did when I first learned web programming. I don't use any libraries, just use HTML and CSS to code a fully responsive website.
-
-**Technologies used**: HTML5, SASS, Javascript
-
-**Functions include**:
-
-- Fully responsive website
-- Semantic HTML
-
-**🔗Webiste**: [https://vercel.com](https://vercel.com)
-
-**🔗Github**: [https://github.com](https://github.com)
+**Time:** 01/2021 - now
+**Description:** System development, operation and maintenance.
 
 ## 🔧Skills
 
 ### 🔠Programming Languages
 
-Javascript, TypeScript.
+- C++
 
-I'm quite confident that I can catch up with other languages when needed very quickly.
+- Javascript, TypeScript.
+
+- Golang
+
+> I'm quite confident that I can catch up with other languages when needed very quickly.
 
 ### 💻Web Front-end Technologies
 
-React, React Query, RTK Query, Redux, Styled Components, TailwindCss, Sass, Webpack, Axios, Vite, Vitest, Mock Service Worker, HTML5, CSS3, SEO.
+React, React Query, Redux, Styled Components, TailwindCss, Sass, Webpack, Axios, Vite, Vitest, Mock Service Worker, HTML5, CSS3, SEO.
 
 ### 🧮Web Back-end Technologies
 
 - Protocols: REST, HTTP(S)
-- Frameworks/Libraries: Node.js, Json server
+- Frameworks/Libraries: Node.js, Json Server
 - Cloud Services: Vercel, Netlify
+- Database: Firebase, MongoDb, SQL
 
 ### 🔨Dev Tools
 
-Git, Postman, Lighthouse, React Developer Tool, Redux Dev Tool, React Query Dev Tool, Github, Gitlab, Figma, VS Code, Bash
+Git, Postman, React Developer Tool, Redux Dev Tool, React Query Dev Tool, Github, Figma, VS Code, Bash
 
 ### 💁🏻‍♂️Industrial & Interpersonal Skills
 
-Write, Present, Teamwork, SEO, digital marketing.
-
-## 🥇Honors & Awards
-
-- End of term scholarship (2022)
-- First semester scholarship (2021-2022)
+Present, Teamwork
 
 ## 📚Education
 
-Software Engineering
-
-**University of Information Technology - VNUHCM** - 2021 - 2025
+**University of Information Technology - VNUHCM**
+Bachelor of Software Engineering | 2021-2025
 
 ## 💋Languages
 
@@ -139,9 +93,9 @@ Software Engineering
 
 ## ☎️Contact information
 
-- 📞Phone: 0768 111 111
+- 📞Phone: (+84) 905 310 437
 - 📧Email: [bvquoc.dev@gmail.com](mailto:bvquoc.dev@gmail.com)
-- ✍🏻Website: [https://duthanhduoc.com/](https://duthanhduoc.com/)
+- ✍🏻Website: [https://bvquoc-portfolio.vercel.app/](https://bvquoc-portfolio.vercel.app/)
 - 🔗Github: [https://github.com/bvquoc/](https://github.com/bvquoc/)
 - 🔗Facebook: [https://www.facebook.com/bviquoc/](https://www.facebook.com/bviquoc/)
 
