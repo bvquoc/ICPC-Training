@@ -9,7 +9,7 @@
 
 > Hi, I'm a student who can code and learn about technology all day without getting tired.
 
-I started learning to code three years ago. Mainly about C++ and competition programming (data structures & algorithms). That helped me win some achievements and get a position as a programming instructor at an academy.
+I started learning to code three years ago, mainly about C++ and competition programming (data structures & algorithms). That helped me win some achievements and get a position as a programming instructor at an academy.
 
 In the past year, I have been very focused on learning web programming. And I'm trying to be a good software engineer.
 
@@ -26,7 +26,7 @@ In the past year, I have been very focused on learning web programming. And I'm 
 
 ## 💻Work experience
 
-### Fullhouse | Programming Instructor (Part-time)
+### **Fullhouse** | Programming Instructor (Part-time)
 
 **Time:** 03/2022 - now
 
@@ -35,13 +35,13 @@ In the past year, I have been very focused on learning web programming. And I'm 
 - Teaching C++ and data structures & algorithms
 - Website administrator laptrinh24h.vn
 
-### thuocsi.vn | Software Engineer Intern
+### **thuocsi.vn** | Software Engineer Intern
 
 **Time:** 11/2021 - 02/2022
 
 **Description:** Use Golang programming language to write functions, APIs, middlewares. Occasionally I am tasked with debugging and maintaining codes.
 
-### luyencode.net | Developer & Administrator
+### **luyencode.net** | Developer & Administrator
 
 **Time:** 01/2021 - now
 **Description:** System development, operation and maintenance.
@@ -60,7 +60,7 @@ In the past year, I have been very focused on learning web programming. And I'm 
 
 ### 💻Web Front-end Technologies
 
-React, React Query, Redux, Styled Components, TailwindCss, Sass, Webpack, Axios, Vite, Vitest, Mock Service Worker, HTML5, CSS3, SEO.
+React, React Query, Redux, Styled Components, TailwindCss, Sass, Webpack, HTML5, CSS3.
 
 ### 🧮Web Back-end Technologies
 
@@ -84,12 +84,9 @@ Bachelor of Software Engineering | 2021-2025
 
 ## 💋Languages
 
-- **English**
-  Read and understand specialized documents.
+- **English:** Read and understand specialized documents.
 
-- **Vietnamese**
-
-  Native speaker.
+- **Vietnamese:** Native speaker.
 
 ## ☎️Contact information
 
