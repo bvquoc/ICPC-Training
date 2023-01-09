@@ -35,15 +35,16 @@ In the past year, I have been very focused on learning web programming. And I'm 
 - Teaching C++ and data structures & algorithms
 - Website administrator laptrinh24h.vn
 
-### **thuocsi.vn** | Software Engineer Intern
+### **[thuocsi.vn](https://thuocsi.vn)** | Software Engineer Intern
 
 **Time:** 11/2021 - 02/2022
 
 **Description:** Use Golang programming language to write functions, APIs, middlewares. Occasionally I am tasked with debugging and maintaining codes.
 
-### **luyencode.net** | Developer & Administrator
+### **[luyencode.net](https://luyencode.net)** | Developer & Administrator
 
 **Time:** 01/2021 - now
+
 **Description:** System development, operation and maintenance.
 
 ## 🔧Skills
